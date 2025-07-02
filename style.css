@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.heart {
+    background-color: pink;
+    height: 100px;
+    width: 100px;
+    transform: rotate(-45deg);
+    position: relative;
+    border: none;
+    cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: pink;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+.heart:before {
+    top: -50px;
+    left: 0;
+}
+
+.heart:after {
+    left: 50px;
+    top: 0;
+}
+
+.heart-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#message {
+    position: absolute;
+    bottom: 120px; /* Adjust this value to move the message higher */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    color: red;
+    animation: pop-up 0.5s;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pop-up {
+    0% { transform: translateX(-50%) scale(0); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    height: 90vh;
+}
+
+#chat-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: white;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex-grow: 1;
+    overflow-y: scroll;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#chat-input {
+    width: calc(100% - 70px);
+    padding: 5px;
+}
+
+#send-btn {
+    width: 60px;
+    padding: 5px;
+}
+
+.media-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#video {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+#image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
